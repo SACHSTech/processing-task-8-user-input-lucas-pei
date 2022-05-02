@@ -74,23 +74,35 @@ public class Sketch extends PApplet {
     text("2. Yeezus", 30, 90);
     text("3. Graduation", 30, 110);
 
-    if(charAlbum == '1'){
+    if (charAlbum == '1') {
       text("Timeless Classic!", 30, 130);
       image(imgDropout, 130, 120);
     }
 
-    if(charAlbum == '2'){
+    if (charAlbum == '2') {
       text("Excellent choice, but I pity your eardrums!", 30, 130);
       image(imgYeezus, 260, 120);
     }
 
-    if(charAlbum == '3'){
+    if (charAlbum == '3') {
       text("You love your synths!", 30, 130);
       image(imgGraduation, 150, 120);
     }
 
     // uses keyCode to let the user choose the better artist, Kanye West or Drake
-    
+    textSize(12);
+    text("Kanye or Drake?", 250, 250);
+    text("Click left arrow key for Kanye, right for Drake", 250, 280);
+    if (keyCode == LEFT) {
+      textSize(12);
+      text("Good choice!", 250, 400);
+    }
+    if (keyCode == RIGHT) {
+      textSize(12);
+      text("Good choice!", 300, 400);
+      }
+
+  
   }
 
   /**
