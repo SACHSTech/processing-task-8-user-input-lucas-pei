@@ -12,7 +12,10 @@ public class Sketch extends PApplet {
   PImage imgStaredown;
   PImage imgYeezus;
   PImage imgDropout;
+  PImage imgDrake;
+  PImage imgYe;
   char charAlbum = ' ';
+
   /**
    * Called once at the beginning of execution, put your size all in this method
    */
@@ -43,6 +46,12 @@ public class Sketch extends PApplet {
 
     imgYeezus = loadImage("yeezus.png");
     imgYeezus.resize(60, 60);
+
+    imgDrake = loadImage("drizzy.png");
+    imgDrake.resize(50, 50);
+
+    imgYe = loadImage("kanyewest.png");
+    imgYe.resize(50, 50);
   }
 
   /**
@@ -63,9 +72,6 @@ public class Sketch extends PApplet {
       text("pressing this key: ", 445, 530);
       text(key, 545, 530);
     }
-    
-    // uses mouseX and mouseY variables to draw Kanye West at the position of the mouse
-    image(imgKanye, mouseX - 2, mouseY - 5);
 
     // uses the variable from keyTyped() to display the user's choice of album
     textSize(12);
@@ -89,20 +95,23 @@ public class Sketch extends PApplet {
       image(imgGraduation, 150, 120);
     }
 
-    // uses keyCode to let the user choose the better artist, Kanye West or Drake
+    // uses keyCode to let the user choose the better artist, Kanye West or Drake, using the left and right arrow keys
     textSize(12);
-    text("Kanye or Drake?", 250, 250);
-    text("Click left arrow key for Kanye, right for Drake", 250, 280);
+    text("Kanye or Drake?", 175, 275);
+    text("Click left arrow key for Kanye, right for Drake", 175, 305);
     if (keyCode == LEFT) {
       textSize(12);
-      text("Good choice!", 250, 400);
+      text("Good choice!", 175, 335);
+      image(imgYe, 175, 345);
     }
     if (keyCode == RIGHT) {
       textSize(12);
-      text("Good choice!", 300, 400);
+      text("Good choice!", 175, 335);
+      image(imgDrake, 175, 345);
       }
-
-  
+    
+    // uses mouseX and mouseY variables to draw Kanye West at the position of the mouse
+    image(imgKanye, mouseX - 2, mouseY - 5);
   }
 
   /**
