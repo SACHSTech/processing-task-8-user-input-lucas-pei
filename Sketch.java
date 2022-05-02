@@ -37,6 +37,12 @@ public class Sketch extends PApplet {
     imgThugger.resize(600, 600);
 
     imgStaredown = loadImage("staredown.png");
+
+    imgDropout = loadImage("tcd.png");
+    imgDropout.resize(60, 60);
+
+    imgYeezus = loadImage("yeezus.png");
+    imgYeezus.resize(60, 60);
   }
 
   /**
@@ -61,28 +67,30 @@ public class Sketch extends PApplet {
     // uses mouseX and mouseY variables to draw Kanye West at the position of the mouse
     image(imgKanye, mouseX - 2, mouseY - 5);
 
-    // favourite album
+    // uses the variable from keyTyped() to display the user's choice of album
     textSize(12);
     text("Pick the best Kanye album by typing the corresponding number:", 30, 50);
     text("1. The College Dropout", 30, 70);
     text("2. Yeezus", 30, 90);
     text("3. Graduation", 30, 110);
 
-    if(keyPressed && charAlbum == '1'){
+    if(charAlbum == '1'){
       text("Timeless Classic!", 30, 130);
-      image(imgGraduation, 130, 120);
+      image(imgDropout, 130, 120);
     }
 
-    if(keyPressed && charAlbum == '2'){
+    if(charAlbum == '2'){
       text("Excellent choice, but I pity your eardrums!", 30, 130);
-      image(imgGraduation, 260, 120);
+      image(imgYeezus, 260, 120);
     }
 
-    if(keyPressed && charAlbum == '3'){
+    if(charAlbum == '3'){
       text("You love your synths!", 30, 130);
       image(imgGraduation, 150, 120);
     }
 
+    // uses keyCode to let the user choose the better artist, Kanye West or Drake
+    
   }
 
   /**
@@ -102,6 +110,9 @@ public class Sketch extends PApplet {
     text("Click", mouseX, mouseY + 40);
   }
 
+  /**
+   * Assigns a character value to charAlbum variable for its use in the draw method
+   */
   public void keyTyped(){
     charAlbum = key;
   }
