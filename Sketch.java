@@ -4,8 +4,9 @@ import processing.core.PImage;
  * Description: A program that demonstrates user input in processing
  * @author: L. Pei 
  */
+
 public class Sketch extends PApplet {
-  //global variables
+  // global variables
   PImage imgKanye;
   PImage imgGraduation;
   PImage imgThugger;
@@ -73,7 +74,7 @@ public class Sketch extends PApplet {
       text(key, 545, 530);
     }
 
-    // uses the variable from keyTyped() to display the user's choice of album
+    // uses the variable from keyTyped() function to display the user's choice of album
     textSize(12);
     text("Pick the best Kanye album by typing the corresponding number:", 30, 50);
     text("1. The College Dropout", 30, 70);
@@ -132,7 +133,7 @@ public class Sketch extends PApplet {
   }
 
   /**
-   * Assigns a character value to charAlbum variable for its use in the draw method
+   * Assigns a character value to charAlbum variable for use in the draw method
    */
   public void keyTyped(){
     charAlbum = key;
